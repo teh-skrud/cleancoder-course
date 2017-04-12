@@ -1,9 +1,6 @@
 
 package com.tocea.course.cleancode.module2.badsmell.primitiveobsess.exercice1;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class PrimitiveObsessionExercice1 {
 
 	public static final String[] personData = new String[] { "John:Wayne:36:5400", "jeremie:guidoux:24:7800",
@@ -39,22 +36,14 @@ public class PrimitiveObsessionExercice1 {
 
 		int totalSalaries = 0;
 		for (final String personalData : _personData) {
-			final Map<String, String> convertedInformations = convertPersonalData(personalData);
-			totalSalaries += Integer.parseInt(convertedInformations.get("salary"));
+			final Person person = convertPersonalData(personalData);
+			totalSalaries += person.getSalary();
 		}
 		return totalSalaries;
 
 	}
 
-	private Map<String, String> convertPersonalData(final String _personalData) {
-
-		final String[] split = _personalData.split(":");
-
-		final Map<String, String> personInformationsMap = new HashMap<String, String>();
-		personInformationsMap.put("firstName", split[0]);
-		personInformationsMap.put("lastName", split[1]);
-		personInformationsMap.put("age", split[2]);
-		personInformationsMap.put("salary", split[3]);
-		return personInformationsMap;
+	private Person convertPersonalData(final String _personalData) {
+		return Person.fromStringRepresentation(_personalData);
 	}
 }

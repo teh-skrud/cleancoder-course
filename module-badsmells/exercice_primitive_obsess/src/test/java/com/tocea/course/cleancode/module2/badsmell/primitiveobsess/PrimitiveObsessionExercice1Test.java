@@ -34,7 +34,7 @@ public class PrimitiveObsessionExercice1Test
     
     /**
      * Test method for
-     * {@link com.tocea.course.cleancode.module2.badsmell.primitiveobsess.exercice1.PrimitiveObsessionExercice1#compteSumOfSalaries()} .
+     * {@link com.tocea.course.cleancode.module2.badsmell.primitiveobsess.exercice1.PrimitiveObsessionExercice1#compteSumOfSalaries(String[])}} .
      */
     @Test
     public final void testCompteSumOfSalaries() {
